@@ -17,10 +17,10 @@ const Navbar = () => {
   return (
     <div>
       <div className="NavBar">
-            <h1>AirBnB Optimal Price</h1>   
+            <h1>Water My Plant</h1>   
      
             <div className='linky'>
-              <Link to={`/new-property`}>New Property</Link>
+              <Link to={`/new-plant`}>New Plant</Link>
             </div>
 
             <div className='linky'>

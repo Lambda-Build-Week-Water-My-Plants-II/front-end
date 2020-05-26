@@ -43,4 +43,5 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, { getData })(DashboardPage);
+// export default connect(mapStateToProps, { getData })(DashboardPage);
+export default DashboardPage;
