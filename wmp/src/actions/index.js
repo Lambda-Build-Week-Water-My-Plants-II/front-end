@@ -10,7 +10,7 @@ export const SET_USER = 'SET_USER';
 export const getData = userId => dispatch => {
   dispatch({ type: FETCH_DATA });
   axiosWithAuth()
-    .get(`/data/output/${userId}`)
+    .get(`/api/plants${userId}`)
     .then(res => {
       dispatch({ type: UPDATE_PLANT, payload: res.data });
     })

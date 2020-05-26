@@ -11,9 +11,9 @@
 import React from 'react';
 import PropertyCard from './PropertyCard';
 import { connect } from 'react-redux';
-import { Tween, Timeline } from 'react-gsap';
+// import { Tween, Timeline } from 'react-gsap';
 
-const PropertyCardList = props => {
+const PlantCardList = props => {
 
   return (
     <>
@@ -22,7 +22,7 @@ const PropertyCardList = props => {
           <div>
             {props.plants.length > 0 ? (
                 <div>
-                    {props.properties.map(e => (
+                    {props.plants.map(e => (
                         <PropertyCard property ={e} />
                         ))}
                 </div>
@@ -49,4 +49,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(PropertyCardList);
+export default connect(mapStateToProps)(PlantCardList);

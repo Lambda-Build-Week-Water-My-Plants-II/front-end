@@ -7,6 +7,7 @@ import { axiosWithAuth } from '../utils/axiosWithAuth';
 import { connect } from 'react-redux';
 
 const AddProperty = props => {
+  console.log(props)
 
     const [plant, setPlant] = useState({
         nickname: '',
@@ -36,7 +37,7 @@ const AddProperty = props => {
   };
 
   return (
-    <div className='addProp'>
+    <div className='addPlant'>
       <div className='return'>
         <Link to='/home'>return</Link>
       </div>
@@ -84,7 +85,7 @@ const AddProperty = props => {
 
 const mapStateToProps = state => {
   return {
-    userId: state.userId
+    user: state.userId
   };
 };
 
