@@ -27,7 +27,7 @@ const LoginForm = props => {
     e.preventDefault();
     const userCredentials = { username: userPerson.email, password: userPerson.password, phone_number: userPerson.phone_number };
     axiosWithAuth()
-      .post('/auth/login', userCredentials)
+      .post('/api/auth/login', userCredentials)
       .then(res => {
         console.log(res);
         props.setUserId(res.data.user.id);

@@ -2,7 +2,7 @@
 
 import {
     FETCH_DATA,
-    UPDATE_PROPERTIES,
+    UPDATE_PLANT,
     SET_ERROR,
     SET_USER,
   } from '../actions';
@@ -19,6 +19,12 @@ import {
         return {
           ...state,
           isFetchingData: true
+        };
+      case UPDATE_PLANT:
+        return {
+          ...state,
+          properties: action.payload,
+          isFetchingData: false
         };
       case SET_ERROR:
         return {

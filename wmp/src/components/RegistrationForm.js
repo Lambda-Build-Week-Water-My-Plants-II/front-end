@@ -17,7 +17,7 @@ const RegistrationForm = props => {
         e.preventDefault();
         const userCredentials = { username: user.username, password: user.password, phone_number: user.phone_number }
         axiosWithAuth()
-            .post('/auth/register', userCredentials)
+            .post('/api/auth/register', userCredentials)
             .then(res => {
                 console.log(res)
                 //registration success message here?
