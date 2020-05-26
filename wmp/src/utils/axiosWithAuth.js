@@ -7,6 +7,6 @@ export const axiosWithAuth = () => {
     headers: {
       authorization: token
     },
-    baseURL: 'https://limitless-earth-34461.herokuapp.com/'
+    baseURL: 'https://limitless-earth-34461.herokuapp.com'
   });
 };

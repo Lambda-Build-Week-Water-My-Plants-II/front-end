@@ -1,35 +1,33 @@
 //plant reducer
 
 import {
-    FETCH_DATA,
-    UPDATE_PROPERTIES,
-    SET_ERROR,
-    SET_USER,
+    UPDATE_PLANT,
+    // ADD_PLANT
   } from '../actions';
   
   const initialState = {
-    userId: -1,
-    error: '',
+    plant: {
+      nickname: '',
+      species: '',
+      h2oFrequency: '',
+    },
+    plants: [],
+
     isFetchingData: false,
   };
   
   export const plantReducer = (state = initialState, action) => {
     switch (action.type) {
-      case FETCH_DATA:
+      // case ADD_PLANT:
+      //   return {
+      //     ...state,
+
+      //   }
+      case UPDATE_PLANT:
         return {
           ...state,
-          isFetchingData: true
-        };
-      case SET_ERROR:
-        return {
-          ...state,
-          error: action.payload,
+          plants: action.payload,
           isFetchingData: false
-        };
-      case SET_USER:
-        return {
-          ...state,
-          userId: action.payload
         };
       default:
         return state;
