@@ -23,10 +23,9 @@ const DashboardPage = props => {
     <div className='dashboard'>
       <NavBar />
 
-      <div className='cardStyle'>
+      {/* <div className='cardStyle'>
           <PlantCardList />
-      </div>
-      <h1>dashboard</h1>
+      </div> */}
 
         <p> &#9400; 2020, Water My Plants</p>
     </div>

@@ -14,6 +14,12 @@ const AddProperty = props => {
         h2oFrequency: '',    
     });
 
+    const handleSelectChanges = e => {
+      const valueSelected = parseInt(e.target.value);
+      setPlant({ ...plant, [e.target.name]: valueSelected });
+      console.log(e.target.name, valueSelected, plant);
+    };
+
     const handleChanges = e => {
         setPlant({ ...plant, [e.target.name]: e.target.value });
         console.log(plant);
@@ -57,16 +63,18 @@ const AddProperty = props => {
               required
             />
             <br />
-            <label htmlFor='frequency'> h2oFrequency: </label>
-            <input
-              id='frequency'
-              type='scrolldown'
-              name='frequency'
-              onChange={handleChanges}
-              placeholder='Choose an option'
+            <label htmlFor='frequency'> h2oFrequency:</label>
+            <select
+              id='h20Frequency'
+              name='h20Frequency'
+              onChange={handleSelectChanges}
               value={plant.h2oFrequency}
               required
-            />
+            >
+              <option value='0'>Low</option>
+              <option value='1'>Medium</option>
+              <option value='2'>High</option>
+            </select>
 
         </form>
         <p> &#9400; 2020, Water My Plants</p>

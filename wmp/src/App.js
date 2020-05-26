@@ -23,7 +23,7 @@ function App() {
         <div className="App">
           <Switch>
             <Route exact path="/" component={LoginPage} />
-            <Route path="/home" component={DashboardPage} />
+            <Route exact path="/home" component={DashboardPage} />
             <PrivateRoute path="/new-plant" component={AddPlantPage} />
           </Switch>
         </div>
