@@ -46,14 +46,14 @@ const LoginForm = (props) => {
         value={userPerson.username}
         name="username"
         type="text"
-        placeholder="User1234"
+        placeholder="UserName1234"
         onChange = {handleChanges}
       />
       <input
         value={userPerson.password}
         name="password"
         type="text"
-        placeholder="Pass1234"
+        placeholder="PassWord1234"
         onChange = {handleChanges}
       />
       <button>Login</button>
