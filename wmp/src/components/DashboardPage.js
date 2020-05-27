@@ -17,17 +17,17 @@ import { getPlant } from '../actions/PlantAction';
 const DashboardPage = props => {
   useEffect(() => {
     props.getPlant();
-  }, []);
+  }, [props]);
 
   return (
     <div className='dashboard'>
       <NavBar />
 
       <div className='cardStyle'>
-          <PlantCardList />
+        <PlantCardList />
       </div>
 
-        <p> &#9400; 2020, Water My Plants</p>
+      <p> &#9400; 2020, Water My Plants</p>
     </div>
   );
 };

@@ -10,36 +10,61 @@
 
 import React from "react";
 import {Link} from "react-router-dom"
-// import { connect } from 'react-redux';
+import { axiosWithAuth } from '../utils/axiosWithAuth';
+import { connect } from 'react-redux';
+import { getPlant } from '../actions/PlantAction'
 
 
 
 const PlantCard = props => {
-    // console.log('plantcard', props)
+    console.log('plantcardy', props)
+
+    const deletePlant = p => {
+        console.log('delete got pushed')
+    
+        axiosWithAuth()
+          .delete(`/api/plants/${p.id}`)
+          .then(res => {
+            console.log(res.data)
+    
+              axiosWithAuth()
+                .get('/api/plants/')
+                .then(res => {
+                  console.log(res)
+                //   updateColors(res.data)
+                })
+                .catch(err => console.log(err))
+              
+          })
+          .catch(err => console.log(err));
+    };
 
 
   return (
     <div className='dashCard'>
-      <h2>{props.plant.name}</h2>
+      <h2>{props.planty.name}</h2>
 
-      <p>Name: {props.plant.nickname}</p>
-      <p>Species: {props.plant.species}</p>
-      <p>Frequency: {props.plant.h20Frequency}</p>
+      <p>Name: {props.planty.nickname}</p>
+      <p>Species: {props.planty.species}</p>
+      <p>Frequency: {props.planty.h20Frequency}</p>
 
-      <Link to={`/new-plant/${props.plant.id}`} >
+      <Link to={`/new-plant/${props.planty.id}`} >
         <button>Edit</button>
       </Link>
-        <button> Delete </button>
+        <button onClick={deletePlant} > Delete </button>
     </div>
   );
 };
 
-// const mapStateToProps = state => {
-//     return {
-//       plant: state.plantReducer.plant,
-//       isFetchingData: state.plantReducer.isFetchingData,
-//       error: state.plantReducer.error
-//     };
-//   };
+const mapStateToProps = state => {
+    return {
+      plant: state.plantReducer.plant,
+    //   isFetchingData: state.plantReducer.isFetchingData,
+    //   error: state.plantReducer.error
+    };
+};
   
-  export default (PlantCard);
+export default connect(
+    mapStateToProps,
+    {getPlant}
+    )(PlantCard);

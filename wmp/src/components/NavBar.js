@@ -10,6 +10,7 @@ import './navbar.css';
 const Navbar = () => {
 
   const history = useHistory();
+  
   const logout = e => {
     e.preventDefault();
     window.localStorage.setItem("token", "");
