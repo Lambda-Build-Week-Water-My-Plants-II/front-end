@@ -10,6 +10,7 @@ import './navbar.css';
 const Navbar = () => {
 
   const history = useHistory();
+  
   const logout = e => {
     e.preventDefault();
     window.localStorage.setItem("token", "");
@@ -19,7 +20,7 @@ const Navbar = () => {
   return (
     <div>
       <div className="NavBar">
-            <h1>Water My Plant</h1>   
+            <h1>Water My Plants</h1>   
      
             <div className='linky'>
               <Link to={`/new-plant`}>New Plant</Link>

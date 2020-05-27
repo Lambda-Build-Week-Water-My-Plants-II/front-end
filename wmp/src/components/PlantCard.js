@@ -8,45 +8,63 @@
 //image//optional
 
 
-import React from 'react';
-import PropertyCard from './PropertyCard';
+import React from "react";
+import {Link} from "react-router-dom"
+import { axiosWithAuth } from '../utils/axiosWithAuth';
 import { connect } from 'react-redux';
-// import { Tween, Timeline } from 'react-gsap';
+import { getPlant } from '../actions/PlantAction'
 
-const PlantCardList = props => {
+
+
+const PlantCard = props => {
+    console.log('plantcardy', props)
+
+    const deletePlant = p => {
+        console.log('delete got pushed')
+    
+        axiosWithAuth()
+          .delete(`/api/plants/${p.id}`)
+          .then(res => {
+            console.log(res.data)
+    
+              axiosWithAuth()
+                .get('/api/plants/')
+                .then(res => {
+                  console.log(res)
+                //   updateColors(res.data)
+                })
+                .catch(err => console.log(err))
+              
+          })
+          .catch(err => console.log(err));
+    };
+
 
   return (
-    <>
-      {!props.error ? (
-        !props.isFetchingData ? (
-          <div>
-            {props.plants.length > 0 ? (
-                <div>
-                    {props.plants.map(e => (
-                        <PropertyCard property ={e} />
-                        ))}
-                </div>
-            )
-           : (
-              <p>No Properties Added Yet</p>
-            )}
-          </div>
-        ) : (
-          <div>Fetching Data ... </div>
-        )
-      ) : (
-        <div>Error Fetching Data</div>
-      )}
-    </>
+    <div className='dashCard'>
+      <h2>{props.planty.name}</h2>
+
+      <p>Name: {props.planty.nickname}</p>
+      <p>Species: {props.planty.species}</p>
+      <p>Frequency: {props.planty.h20Frequency}</p>
+
+      <Link to={`/new-plant/${props.planty.id}`} >
+        <button>Edit</button>
+      </Link>
+        <button onClick={deletePlant} > Delete </button>
+    </div>
   );
 };
 
 const mapStateToProps = state => {
-  return {
-    properties: state.properties,
-    isFetchingData: state.isFetchingData,
-    error: state.error
-  };
+    return {
+      plant: state.plantReducer.plant,
+    //   isFetchingData: state.plantReducer.isFetchingData,
+    //   error: state.plantReducer.error
+    };
 };
-
-export default connect(mapStateToProps)(PlantCardList);
+  
+export default connect(
+    mapStateToProps,
+    {getPlant}
+    )(PlantCard);

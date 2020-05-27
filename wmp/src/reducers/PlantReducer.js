@@ -1,35 +1,33 @@
 //plant reducer
 
 import {
-    UPDATE_PLANT,
-    // ADD_PLANT
-  } from '../actions';
+    FETCH_PLANT_START,
+    FETCH_PLANT_SUCCESS
+  } from '../actions/PlantAction';
   
   const initialState = {
-    plant: {
-      nickname: '',
-      species: '',
-      h2oFrequency: '',
-    },
     plants: [],
-
     isFetchingData: false,
+    error: '',
   };
   
-  export const plantReducer = (state = initialState, action) => {
+  const plantReducer = (state = initialState, action) => {
     switch (action.type) {
-      // case ADD_PLANT:
-      //   return {
-      //     ...state,
-
-      //   }
-      case UPDATE_PLANT:
+      case FETCH_PLANT_START:
+        return {
+          ...state,
+          isFetchingData: true
+        }
+      case FETCH_PLANT_SUCCESS:
         return {
           ...state,
           plants: action.payload,
-          isFetchingData: false
+          isFetchingData: false,
+          error: ''
         };
       default:
         return state;
     }
   };
+
+  export default plantReducer;

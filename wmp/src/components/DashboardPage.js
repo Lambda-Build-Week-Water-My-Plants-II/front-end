@@ -12,35 +12,35 @@ import NavBar from './NavBar';
 import PlantCardList from './PlantCardList';
 
 import { connect } from 'react-redux';
-import { getData } from '../actions';
+import { getPlant } from '../actions/PlantAction';
 
 const DashboardPage = props => {
-//   useEffect(() => {
-//     props.getData(window.localStorage.getItem('userId'));
-//   }, [props.updateProperties]);
+  useEffect(() => {
+    props.getPlant();
+  }, [props]);
 
   return (
     <div className='dashboard'>
       <NavBar />
 
-      {/* <div className='cardStyle'>
-          <PlantCardList />
-      </div> */}
+      <div className='cardStyle'>
+        <PlantCardList />
+      </div>
 
-        <p> &#9400; 2020, Water My Plants</p>
+      <p> &#9400; 2020, Water My Plants</p>
     </div>
   );
 };
 
 const mapStateToProps = state => {
   return {
-    userId: state.userId,
-    properties: state.properties,
-    error: state.error,
-    isFetchingData: state.isFetchingData,
-    updateProperties: state.updateProperties
+    // userId: state.userId,
+    // properties: state.properties,
+    // error: state.error,
+    // isFetchingData: state.isFetchingData,
+    // updateProperties: state.updateProperties
   };
 };
 
-// export default connect(mapStateToProps, { getData })(DashboardPage);
-export default DashboardPage;
+export default connect(mapStateToProps, { getPlant })(DashboardPage);
+// export default DashboardPage;

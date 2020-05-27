@@ -16,9 +16,9 @@ const AddProperty = props => {
     });
 
     const handleSelectChanges = e => {
-      const valueSelected = parseInt(e.target.value);
+      const valueSelected = e.target.value;
       setPlant({ ...plant, [e.target.name]: valueSelected });
-      console.log(e.target.name, valueSelected, plant);
+      console.log('fluffy', e.target.name, valueSelected, plant);
     };
 
     const handleChanges = e => {
@@ -31,7 +31,7 @@ const AddProperty = props => {
     e.preventDefault();
     console.log(plant);
     axiosWithAuth()
-      .post(`/data/input/${window.localStorage.getItem('userId')}`, plant)
+      .post(`/api/plants/${window.localStorage.getItem('userId')}`, plant)
       .then(res => console.log(res))
       .catch(err => console.log(err));
   };
@@ -42,11 +42,11 @@ const AddProperty = props => {
         <Link to='/home'>return</Link>
       </div>
         <form onSubmit={submitForm}>
-            <label htmlFor='name'> Name: </label>
+            <label htmlFor='nickname'> Name: </label>
             <input
-              id='name'
+              id='nickname'
               type='text'
-              name='name'
+              name='nickname'
               onChange={handleChanges}
               placeholder='Name'
               value={plant.nickname}
@@ -64,7 +64,7 @@ const AddProperty = props => {
               required
             />
             <br />
-            <label htmlFor='frequency'> h2oFrequency:</label>
+            <label htmlFor='h20Frequency'> h2oFrequency:</label>
             <select
               id='h20Frequency'
               name='h20Frequency'
@@ -72,10 +72,13 @@ const AddProperty = props => {
               value={plant.h2oFrequency}
               required
             >
-              <option value='0'>Low</option>
-              <option value='1'>Medium</option>
-              <option value='2'>High</option>
+              <option value='low'>Low</option>
+              <option value='medium'>Medium</option>
+              <option value='high'>High</option>
             </select>
+
+            <br />
+            <button type='submit'> Add Plant</button>
 
         </form>
         <p> &#9400; 2020, Water My Plants</p>
