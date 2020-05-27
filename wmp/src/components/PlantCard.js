@@ -8,45 +8,38 @@
 //image//optional
 
 
-import React from 'react';
-import PropertyCard from './PropertyCard';
-import { connect } from 'react-redux';
-// import { Tween, Timeline } from 'react-gsap';
+import React from "react";
+import {Link} from "react-router-dom"
+// import { connect } from 'react-redux';
 
-const PlantCardList = props => {
+
+
+const PlantCard = props => {
+    // console.log('plantcard', props)
+
 
   return (
-    <>
-      {!props.error ? (
-        !props.isFetchingData ? (
-          <div>
-            {props.plants.length > 0 ? (
-                <div>
-                    {props.plants.map(e => (
-                        <PropertyCard property ={e} />
-                        ))}
-                </div>
-            )
-           : (
-              <p>No Properties Added Yet</p>
-            )}
-          </div>
-        ) : (
-          <div>Fetching Data ... </div>
-        )
-      ) : (
-        <div>Error Fetching Data</div>
-      )}
-    </>
+    <div className='dashCard'>
+      <h2>{props.plant.name}</h2>
+
+      <p>Name: {props.plant.nickname}</p>
+      <p>Species: {props.plant.species}</p>
+      <p>Frequency: {props.plant.h20Frequency}</p>
+
+      <Link to={`/new-plant/${props.plant.id}`} >
+        <button>Edit</button>
+      </Link>
+        <button> Delete </button>
+    </div>
   );
 };
 
-const mapStateToProps = state => {
-  return {
-    properties: state.properties,
-    isFetchingData: state.isFetchingData,
-    error: state.error
-  };
-};
-
-export default connect(mapStateToProps)(PlantCardList);
+// const mapStateToProps = state => {
+//     return {
+//       plant: state.plantReducer.plant,
+//       isFetchingData: state.plantReducer.isFetchingData,
+//       error: state.plantReducer.error
+//     };
+//   };
+  
+  export default (PlantCard);

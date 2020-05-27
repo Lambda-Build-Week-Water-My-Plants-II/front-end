@@ -31,7 +31,7 @@ const AddProperty = props => {
     e.preventDefault();
     console.log(plant);
     axiosWithAuth()
-      .post(`/data/input/${window.localStorage.getItem('userId')}`, plant)
+      .post(`/api/plants/${window.localStorage.getItem('userId')}`, plant)
       .then(res => console.log(res))
       .catch(err => console.log(err));
   };
@@ -76,6 +76,9 @@ const AddProperty = props => {
               <option value='1'>Medium</option>
               <option value='2'>High</option>
             </select>
+
+            <br />
+            <button type='submit'> Add Plant</button>
 
         </form>
         <p> &#9400; 2020, Water My Plants</p>
