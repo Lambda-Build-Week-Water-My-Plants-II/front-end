@@ -13,6 +13,7 @@ import DashboardPage from "./components/DashboardPage";
 import AddPlantPage from "./components/AddPlantPage";
 
 import "./App.css";
+import RegistrationForm from "./components/RegistrationForm";
 
 const store = createStore(reducer, applyMiddleware(thunk));
 
@@ -23,6 +24,7 @@ function App() {
         <div className="App">
           <Switch>
             <Route exact path="/" component={LoginPage} />
+            <Route exact path="/register" component={RegistrationForm} />
             <PrivateRoute path="/home" component={DashboardPage} />
             <PrivateRoute path="/new-property" component={AddPlantPage} />
           </Switch>
