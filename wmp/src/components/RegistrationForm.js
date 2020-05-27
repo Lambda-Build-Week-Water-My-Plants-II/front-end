@@ -18,27 +18,33 @@ const RegistrationForm = (props) => {
     });
   };
 
-  const submitForm = (e) => {
-    e.preventDefault();
-    const userCredentials = {
-      username: user.username,
-      password: user.password,
-      phone_number: user.phone_number,
-    };
-    axiosWithAuth()
-      .post("/auth/register", userCredentials)
-      .then((res) => {
-        console.log(res);
-        //registration success message here?
-      })
-      .catch((err) => console.log(err));
+//   const submitForm = (e) => {
+//     e.preventDefault();
+//     const userCredentials = {
+//       username: user.username,
+//       password: user.password,
+//       phone_number: user.phone_number,
+//     };
+//     axiosWithAuth()
+//       .post("/auth/register", userCredentials)
+//       .then((res) => {
+//         console.log(res);
+//         //registration success message here?
+//       })
+//       .catch((err) => console.log(err));
+    // }
 
-    let successMess = "Registration Successful";
-    setUser({ ...user, successMess });
-    setTimeout(() => {
-      props.setActive(true);
-    }, 1000);
-  };
+    const submitForm = e => {
+        e.preventDefault();
+        const userCredentials = { username: user.username, password: user.password, phone_number: user.phone_number }
+        axiosWithAuth()
+            .post('/api/auth/register', userCredentials)
+            .then(res => {
+                console.log(res)
+                //registration success message here?
+            })
+            .catch( err => console.log(err) );
+        }
 
   return (
     <div className = 'regForm'>

@@ -30,8 +30,8 @@ const LoginForm = (props) => {
       phone_number: userPerson.phone_number,
     };
     axiosWithAuth()
-      .post("/auth/login", userCredentials)
-      .then((res) => {
+      .post('/api/auth/login', userCredentials)
+      .then(res => {
         console.log(res);
         props.setUserId(res.data.user.id);
         window.localStorage.setItem("token", res.data.token);
