@@ -18,22 +18,6 @@ const RegistrationForm = (props) => {
     });
   };
 
-//   const submitForm = (e) => {
-//     e.preventDefault();
-//     const userCredentials = {
-//       username: user.username,
-//       password: user.password,
-//       phone_number: user.phone_number,
-//     };
-//     axiosWithAuth()
-//       .post("/auth/register", userCredentials)
-//       .then((res) => {
-//         console.log(res);
-//         //registration success message here?
-//       })
-//       .catch((err) => console.log(err));
-    // }
-
     const submitForm = e => {
         e.preventDefault();
         const userCredentials = { username: user.username, password: user.password, phone_number: user.phone_number }
@@ -41,7 +25,6 @@ const RegistrationForm = (props) => {
             .post('/api/auth/register', userCredentials)
             .then(res => {
                 console.log(res)
-                //registration success message here?
             })
             .catch( err => console.log(err) );
         }
@@ -55,21 +38,21 @@ const RegistrationForm = (props) => {
           value={user.username}
           name="username"
           type="text"
-          placeholder="User1234" 
+          placeholder="Username" 
           onChange = {handleChanges}
         />
         <input
           value={user.password}
           name="password"
-          type="text"
-          placeholder="Pass1234"
+          type="password"
+          placeholder="Password"
           onChange={handleChanges}
         />
         <input
           value={user.phone_number}
-          name="PhoneNumber"
+          name="phone_number"
           type="text"
-          placeholder="(areaCode)555-1234"
+          placeholder="(999)999-9999"
           onChange= {handleChanges}
         />
         <button type='submit'>Register</button>
