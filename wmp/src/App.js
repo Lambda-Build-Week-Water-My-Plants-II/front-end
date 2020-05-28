@@ -7,7 +7,7 @@ import reducer from "./reducers";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 
-// import PrivateRoute from "./components/PrivateRoute";
+import PrivateRoute from "./components/PrivateRoute";
 import LoginPage from "./components/LoginPage";
 import DashboardPage from "./components/DashboardPage";
 import AddPlantPage from "./components/AddPlantPage";
