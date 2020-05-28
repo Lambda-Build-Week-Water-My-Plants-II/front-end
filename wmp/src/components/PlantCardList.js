@@ -23,13 +23,13 @@ const PlantCardList = props => {
               ))}
             </div>
 
-            : (<p>No Plants Added Yet</p>)}
+            : (<h4>No Plants Added Yet</h4>)}
           </div>
         ) : (
-          <div>Fetching Plants ...</div>
+          <h4>Fetching Plants ...</h4>
         )
       ) : (
-        <p>Error Fetching Plants</p>
+        <h4>Welcome! Add A Plant To Begin</h4>
       )
 
       }

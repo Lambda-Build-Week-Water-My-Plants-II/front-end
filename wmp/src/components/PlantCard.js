@@ -46,15 +46,13 @@ const PlantCard = props => {
         <p>Species: {props.planty.species}</p>
         <p>Frequency: {props.planty.h2oFrequency}</p>
       </div>
-
-
-
-
-
     
-      <button onClick={() => editPlant(props.planty)} >Edit</button>
+      <div className='cardButtons'>
+        <button onClick={() => editPlant(props.planty)} >Edit</button>
 
-      <button onClick={() => props.deletePlant(props.planty.id)} > Delete </button>
+        <button onClick={() => props.deletePlant(props.planty.id)} > Delete </button>
+      </div>
+
     </div>
   );
 };

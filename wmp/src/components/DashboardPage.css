@@ -17,16 +17,19 @@
     /* border: 2px blue solid; */
     margin: 1%;
     /* display: flex; */
-    box-shadow: 10px 10px 20px gray;
-    border-radius: 5px;
-    background: linear-gradient(180deg, gray 10%, black 90%);
 
+    border-radius: 5px;
 }
 
 .plantCard {
     /* display: flex; */
     /* border: 2px purple solid; */
     padding: 2%;
-    background-color: rgba(7, 156, 7, 0.5);
+    background: linear-gradient(180deg, rgba(7, 156, 7, 0.5) 10%, #DBE1DA 90%);
     border-radius: 5px;
+    box-shadow: 10px 10px 20px gray;
+}
+
+.cardButtons {
+    padding: 3%;
 }
