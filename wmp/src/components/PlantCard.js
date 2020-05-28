@@ -41,11 +41,15 @@ const PlantCard = props => {
 
   return (
     <div className='dashCard'>
-      <h2>{props.planty.name}</h2>
+      <div className='plantCard'>
+        <h3>Name: {props.planty.nickname}</h3>
+        <p>Species: {props.planty.species}</p>
+        <p>Frequency: {props.planty.h2oFrequency}</p>
+      </div>
 
-      <p>Name: {props.planty.nickname}</p>
-      <p>Species: {props.planty.species}</p>
-      <p>Frequency: {props.planty.h2oFrequency}</p>
+
+
+
 
     
       <button onClick={() => editPlant(props.planty)} >Edit</button>
