@@ -1,10 +1,12 @@
 //This page contains a form for adding a new plant to a user's list
 //The info from this form will be used to create a new card on the dashboard page
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
 import { connect } from 'react-redux';
+import {editPlant} from '../actions/PlantAction';
+
 
 const AddProperty = props => {
   console.log(props)
@@ -14,6 +16,17 @@ const AddProperty = props => {
         species: '',
         h2oFrequency: '',    
     });
+
+    useEffect(() => {
+      if(props.isEditing === true){
+        setPlant({
+          ...plant, 
+          nickname: props.plantToEdit.nickname,
+          species: props.plantToEdit.species,
+          h2oFrequency: props.plantToEdit.h2oFrequency
+        })
+      }
+    }, [props.isEditing])
 
     const handleSelectChanges = e => {
       const valueSelected = e.target.value;
@@ -30,10 +43,15 @@ const AddProperty = props => {
   const submitForm = e => {
     e.preventDefault();
     console.log(plant);
-    axiosWithAuth()
-      .post(`/api/plants/${window.localStorage.getItem('userId')}`, plant)
+
+    if(props.isEditing === true){
+      props.editPlant(props.plantToEdit.id, plant)
+    } else {
+      axiosWithAuth()
+      .post(`/api/plants/`, plant)
       .then(res => console.log(res))
       .catch(err => console.log(err));
+    }
   };
 
   return (
@@ -64,10 +82,10 @@ const AddProperty = props => {
               required
             />
             <br />
-            <label htmlFor='h20Frequency'> h2oFrequency:</label>
+            <label htmlFor='h2oFrequency'> h2oFrequency:</label>
             <select
-              id='h20Frequency'
-              name='h20Frequency'
+              id='h2oFrequency'
+              name='h2oFrequency'
               onChange={handleSelectChanges}
               value={plant.h2oFrequency}
               required
@@ -78,7 +96,8 @@ const AddProperty = props => {
             </select>
 
             <br />
-            <button type='submit'> Add Plant</button>
+            <button type='submit'> Submit Plant</button>
+            {/* {console.log(props.isEditing, props.plantToEdit)} */}
 
         </form>
         <p> &#9400; 2020, Water My Plants</p>
@@ -88,8 +107,9 @@ const AddProperty = props => {
 
 const mapStateToProps = state => {
   return {
-    user: state.userId
+    isEditing: state.plantReducer.isEditing,
+    plantToEdit: state.plantReducer.plantToEdit
   };
 };
 
-export default connect(mapStateToProps, {})(AddProperty);
+export default connect(mapStateToProps, {editPlant})(AddProperty);

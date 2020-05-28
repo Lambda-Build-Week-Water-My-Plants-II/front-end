@@ -9,35 +9,34 @@
 
 
 import React from "react";
-import {Link} from "react-router-dom"
-import { axiosWithAuth } from '../utils/axiosWithAuth';
+import {useHistory} from "react-router-dom"
+// import { axiosWithAuth } from '../utils/axiosWithAuth';
 import { connect } from 'react-redux';
-import { getPlant } from '../actions/PlantAction'
+import { getPlant, deletePlant, startEdit } from '../actions/PlantAction'
+
 
 
 
 const PlantCard = props => {
     console.log('plantcardy', props)
 
-    const deletePlant = p => {
-        console.log('delete got pushed')
+    const {push} =  useHistory();
+
+    // const deletePlant = p => {
+    //     console.log('delete got pushed')
     
-        axiosWithAuth()
-          .delete(`/api/plants/${p.id}`)
-          .then(res => {
-            console.log(res.data)
-    
-              axiosWithAuth()
-                .get('/api/plants/')
-                .then(res => {
-                  console.log(res)
-                //   updateColors(res.data)
-                })
-                .catch(err => console.log(err))
+    //     axiosWithAuth()
+    //       .delete(`/api/plants/${p.id}`)
+    //       .then(res => {
+    //         console.log(res.data)
               
-          })
-          .catch(err => console.log(err));
-    };
+    //       })
+    //       .catch(err => console.log(err));
+    // };
+
+    const editPlant = (plantObj => {
+      props.startEdit(plantObj, () => push('/new-plant'))
+    })
 
 
   return (
@@ -46,12 +45,12 @@ const PlantCard = props => {
 
       <p>Name: {props.planty.nickname}</p>
       <p>Species: {props.planty.species}</p>
-      <p>Frequency: {props.planty.h20Frequency}</p>
+      <p>Frequency: {props.planty.h2oFrequency}</p>
 
-      <Link to={`/new-plant/${props.planty.id}`} >
-        <button>Edit</button>
-      </Link>
-        <button onClick={deletePlant} > Delete </button>
+    
+      <button onClick={() => editPlant(props.planty)} >Edit</button>
+
+      <button onClick={() => props.deletePlant(props.planty.id)} > Delete </button>
     </div>
   );
 };
@@ -66,5 +65,5 @@ const mapStateToProps = state => {
   
 export default connect(
     mapStateToProps,
-    {getPlant}
+    {getPlant, deletePlant, startEdit}
     )(PlantCard);
