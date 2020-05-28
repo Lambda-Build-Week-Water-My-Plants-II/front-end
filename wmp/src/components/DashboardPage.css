@@ -1,0 +1,35 @@
+.dashboard {
+    background-color: #DBE1DA;
+}
+
+.cardStyle {
+    /* border: 1px red solid; */
+    width: 100%;
+    /* display: flex;
+    flex-direction: column; */
+}
+
+.mainCard {
+    display: flex;
+}
+
+.dashCard {
+    /* border: 2px blue solid; */
+    margin: 1%;
+    /* display: flex; */
+
+    border-radius: 5px;
+}
+
+.plantCard {
+    /* display: flex; */
+    /* border: 2px purple solid; */
+    padding: 2%;
+    background: linear-gradient(180deg, rgba(7, 156, 7, 0.5) 10%, #DBE1DA 90%);
+    border-radius: 5px;
+    box-shadow: 10px 10px 20px gray;
+}
+
+.cardButtons {
+    padding: 3%;
+}

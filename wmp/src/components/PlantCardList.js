@@ -13,14 +13,26 @@ const PlantCardList = props => {
 
   return (
     <>
+      {!props.error ? (
+        !props.isFetchingData ? (
+          <div>
+            {props.plant.length > 0 ?
+            <div className='mainCard'>
+              {props.plant.map(plant => (
+                  <PlantCard key={plant.id} planty ={plant} />
+              ))}
+            </div>
 
-    <div>
-        {props.plant.map(plant => (
-            <PlantCard key={plant.id} planty ={plant} />
-        ))}
-    </div>
-    
-    <p>No Plants Added Yet</p>
+            : (<h4>No Plants Added Yet</h4>)}
+          </div>
+        ) : (
+          <h4>Fetching Plants ...</h4>
+        )
+      ) : (
+        <h4>Welcome! Add A Plant To Begin</h4>
+      )
+
+      }
 
     </>
   );
@@ -29,8 +41,8 @@ const PlantCardList = props => {
 const mapStateToProps = state => {
   return {
     plant: state.plantReducer.plants,
-    // isFetchingData: state.plantReducer.isFetchingData,
-    // error: state.pantReducer.error
+    isFetchingData: state.plantReducer.isFetchingData,
+    error: state.plantReducer.error
   };
 };
 

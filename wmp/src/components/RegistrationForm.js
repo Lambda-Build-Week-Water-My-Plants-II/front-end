@@ -3,8 +3,10 @@
 
 import React, { useState } from "react";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
+import { useHistory } from "react-router-dom";
 
 const RegistrationForm = (props) => {
+  let history = useHistory();
   const [user, setUser] = useState({
     username: "",
     password: "",
@@ -25,6 +27,7 @@ const RegistrationForm = (props) => {
             .post('/api/auth/register', userCredentials)
             .then(res => {
                 console.log(res)
+                history.push("/");
             })
             .catch( err => console.log(err) );
         }

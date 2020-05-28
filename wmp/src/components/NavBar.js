@@ -26,8 +26,8 @@ const Navbar = () => {
               <Link to={`/new-plant`}>New Plant</Link>
             </div>
 
-            <div className='logout'
-              onClick={logout}>Logout
+            <div className='logout'>
+              <button onClick={logout}>Logout </button>
             </div>
       </div>
     </div>
