@@ -15,8 +15,8 @@ const PlantCardList = props => {
     <>
 
     <div>
-        {props.plant.map(e => (
-            <PlantCard key={e.id} planty ={e} />
+        {props.plant.map(plant => (
+            <PlantCard key={plant.id} planty ={plant} />
         ))}
     </div>
     

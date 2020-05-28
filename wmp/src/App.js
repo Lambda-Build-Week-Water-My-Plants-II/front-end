@@ -26,7 +26,7 @@ function App() {
             <Route exact path="/" component={LoginPage} />
             <Route exact path="/register" component={RegistrationForm} />
             <PrivateRoute path="/home" component={DashboardPage} />
-            <PrivateRoute path="/new-property" component={AddPlantPage} />
+            <PrivateRoute path="/new-plant" component={AddPlantPage} />
           </Switch>
         </div>
       </Provider>
