@@ -9,7 +9,10 @@ const formSchema = yup.object().shape({
     password:yup.string()
     .trim()
     .min(5, 'Password must be at least five characters')
-    .required('Password is required')
+    .required('Password is required'),
+
+    phone_number: yup.string()
+    .trim(),
         
 })
 
