@@ -1,9 +1,12 @@
-/* .dashboard {
-    background-color: #DBE1DA;
-} */
+.dashboard {
+    background-image: url('../images/img1.jpg') ;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
 
 .cardStyle {
-    /* border: 1px red solid; */
     width: 100%;
     margin-top: 1%;
 }
@@ -15,22 +18,18 @@
 }
 
 .dashCard {
-    /* border: 2px blue solid; */
     margin: 1%;
-    /* display: flex; */
     width: 30%;
     border-radius: 5px;
 }
 
 .plantCard {
-    /* display: flex; */
-    /* border: 2px purple solid; */
     padding: 2% 0;
-    background: linear-gradient(180deg, rgba(7, 156, 7, 0.5) 10%, #DBE1DA 90%);
+    /* background: linear-gradient(180deg, rgba(7, 156, 7, 0.5) 10%, #DBE1DA 90%); */
     border-radius: 5px;
     box-shadow: 0px 5px 10px gray;
     width: 100%;
-    /* margin: 3%; */
+    background-color: rgba(219, 225, 218, 0.9);
 }
 
 .cardButtons {
@@ -42,11 +41,9 @@
     color: white;
     border-radius: 3px;
     border: none;
-    /* padding: 2% 4%; */
     font-size: 1rem;
-    /* border: 1px red solid; */
-    padding: 5% 2%;
-    width: 40%;
+    padding: 2% 1%;
+    width: 30%;
     margin: 1%;
 }
 
@@ -56,7 +53,6 @@
 }
 
 .footer {
-    /* border: 1px red solid; */
     position: fixed;
     bottom: 0;
     width: 100%;

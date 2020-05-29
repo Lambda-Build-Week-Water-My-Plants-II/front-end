@@ -24,15 +24,15 @@ const Navbar = () => {
   return (
     <div>
       <div className="NavBar">
-            <h1>Water My Plants</h1>   
-     
-            <div className='linky'>
-              <button onClick={newPlant}>New Plant</button>
-            </div>
+        <h1>Water My Plants</h1>   
+  
+        <div className='linky'>
+          <button onClick={newPlant}>New Plant</button>
+        </div>
 
-            <div className='logout'>
-              <button onClick={logout}>Log out </button>
-            </div>
+        <div className='logout'>
+          <button onClick={logout}>Log out </button>
+        </div>
       </div>
     </div>
   );
