@@ -4,7 +4,6 @@
 import React, { useState, useEffect } from "react";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 import { useHistory } from "react-router-dom";
-<<<<<<< HEAD
 import formSchema from "../validation/formSchema";
 import * as yup from "yup";
 import {Link} from 'react-router-dom'
@@ -18,10 +17,6 @@ const initialDisabled = true;
 const RegistrationForm = (props) => {
   const [formErrors, setFormErrors] = useState(initialFormError);
   const [disabled, setDisabled] = useState(initialDisabled);
-=======
-
-const RegistrationForm = (props) => {
->>>>>>> bdfe8a3ef071a4b8ccab7056646061e6a7e16229
   let history = useHistory();
   const [user, setUser] = useState({
     username: "",
