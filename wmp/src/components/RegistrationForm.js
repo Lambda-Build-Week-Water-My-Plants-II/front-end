@@ -4,6 +4,7 @@
 import React, { useState, useEffect } from "react";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 import { useHistory } from "react-router-dom";
+<<<<<<< HEAD
 import formSchema from "../validation/formSchema";
 import * as yup from "yup";
 import {Link} from 'react-router-dom'
@@ -17,6 +18,10 @@ const initialDisabled = true;
 const RegistrationForm = (props) => {
   const [formErrors, setFormErrors] = useState(initialFormError);
   const [disabled, setDisabled] = useState(initialDisabled);
+=======
+
+const RegistrationForm = (props) => {
+>>>>>>> bdfe8a3ef071a4b8ccab7056646061e6a7e16229
   let history = useHistory();
   const [user, setUser] = useState({
     username: "",
@@ -50,27 +55,23 @@ const RegistrationForm = (props) => {
       });
   };
 
-  const submitForm = (e) => {
-    e.preventDefault();
-    const userCredentials = {
-      username: user.username,
-      password: user.password,
-      phone_number: user.phone_number,
-    };
-    axiosWithAuth()
-      .post("/api/auth/register", userCredentials)
-      .then((res) => {
-        console.log(res);
-        history.push("/home");
-      })
-      .catch((err) => console.log(err));
-  };
+    const submitForm = e => {
+        e.preventDefault();
+        const userCredentials = { username: user.username, password: user.password, phone_number: user.phone_number }
+        axiosWithAuth()
+            .post('/api/auth/register', userCredentials)
+            .then(res => {
+                console.log(res)
+                history.push("/");
+            })
+            .catch( err => console.log(err) );
+    }
 
-  useEffect(() => {
-    formSchema.isValid(user).then((valid) => {
-      setDisabled(!valid);
-    });
-  }, [user]);
+    useEffect(() => {
+        formSchema.isValid(user).then((valid) => {
+          setDisabled(!valid);
+        });
+      }, [user]);
 
   return (
     <div className="regForm">

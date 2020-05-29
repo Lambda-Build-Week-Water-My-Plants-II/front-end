@@ -1,5 +1,41 @@
 .NavBar {
-    background-color: rgb(211, 211, 211);
+    /* background-color: rgb(211, 211, 211); */
     display: flex;
     justify-content: space-between;
+    box-shadow: 0px 5px 5px gray;
+}
+
+.NavBar h1 {
+    margin-left: 1%;
+}
+
+
+.linky, .logout {
+    display: flex;
+    align-items: center;
+    /* padding: 2% 4%; */
+    /* border: 1px red solid; */
+    width: 15%;
+}
+
+.logout {
+    margin-right: 2%;
+}
+
+.linky button, .logout button {
+    background-color: rgba(58, 105, 50, 0.7);
+    color: white;
+    border-radius: 3px;
+    border: none;
+    /* padding: 2% 4%; */
+    font-size: 1.2rem;
+    /* border: 1px red solid; */
+    padding: 5% 2%;
+    width: 100%;
+
+}
+
+.linky button:hover, .logout button:hover {
+    background-color: rgb(0, 0, 0);
+    transition: .6s;
 }

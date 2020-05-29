@@ -6,38 +6,40 @@ import { Link } from 'react-router-dom';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
 import { connect } from 'react-redux';
 import {editPlant} from '../actions/PlantAction';
+import { useHistory } from "react-router-dom";
 
 
 const AddProperty = props => {
   console.log(props)
+  let history = useHistory();
 
-    const [plant, setPlant] = useState({
-        nickname: '',
-        species: '',
-        h2oFrequency: '',    
-    });
+  const [plant, setPlant] = useState({
+      nickname: '',
+      species: '',
+      h2oFrequency: '',    
+  });
 
-    useEffect(() => {
-      if(props.isEditing === true){
-        setPlant({
-          ...plant, 
-          nickname: props.plantToEdit.nickname,
-          species: props.plantToEdit.species,
-          h2oFrequency: props.plantToEdit.h2oFrequency
-        })
-      }
-    }, [props.isEditing])
+  useEffect(() => {
+    if(props.isEditing === true){
+      setPlant({
+        ...plant, 
+        nickname: props.plantToEdit.nickname,
+        species: props.plantToEdit.species,
+        h2oFrequency: props.plantToEdit.h2oFrequency
+      })
+    }
+  }, [props.isEditing])
 
-    const handleSelectChanges = e => {
-      const valueSelected = e.target.value;
-      setPlant({ ...plant, [e.target.name]: valueSelected });
-      console.log('fluffy', e.target.name, valueSelected, plant);
+  const handleSelectChanges = e => {
+    const valueSelected = e.target.value;
+    setPlant({ ...plant, [e.target.name]: valueSelected });
+    console.log('fluffy', e.target.name, valueSelected, plant);
+  };
+
+  const handleChanges = e => {
+      setPlant({ ...plant, [e.target.name]: e.target.value });
+      console.log(plant);
     };
-
-    const handleChanges = e => {
-        setPlant({ ...plant, [e.target.name]: e.target.value });
-        console.log(plant);
-      };
 
 
   const submitForm = e => {
@@ -46,11 +48,16 @@ const AddProperty = props => {
 
     if(props.isEditing === true){
       props.editPlant(props.plantToEdit.id, plant)
+      history.push("/home");
     } else {
       axiosWithAuth()
       .post(`/api/plants/`, plant)
-      .then(res => console.log(res))
+      .then(res => {
+        console.log(res)
+        history.push("/home");
+      })
       .catch(err => console.log(err));
+      
     }
   };
 

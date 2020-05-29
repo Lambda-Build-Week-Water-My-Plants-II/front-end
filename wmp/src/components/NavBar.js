@@ -3,13 +3,17 @@
 //create buttons for each of those actions
 
 import React from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 import './navbar.css';
 
 const Navbar = () => {
 
   const history = useHistory();
+
+  const newPlant = e => {
+    history.push("/new-plant");
+  }
 
   const logout = e => {
     e.preventDefault();
@@ -23,11 +27,11 @@ const Navbar = () => {
             <h1>Water My Plants</h1>   
      
             <div className='linky'>
-              <Link to={`/new-plant`}>New Plant</Link>
+              <button onClick={newPlant}>New Plant</button>
             </div>
 
-            <div className='logout'
-              onClick={logout}>Logout
+            <div className='logout'>
+              <button onClick={logout}>Log out </button>
             </div>
       </div>
     </div>

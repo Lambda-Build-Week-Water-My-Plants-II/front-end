@@ -14,6 +14,8 @@ import PlantCardList from './PlantCardList';
 import { connect } from 'react-redux';
 import { getPlant } from '../actions/PlantAction';
 
+import './DashboardPage.css'
+
 const DashboardPage = props => {
   useEffect(() => {
     props.getPlant();
@@ -27,19 +29,16 @@ const DashboardPage = props => {
         <PlantCardList />
       </div>
 
-      <p> &#9400; 2020, Water My Plants</p>
+      <div className='footer' >
+        <p> &#9400; 2020, Water My Plants</p>
+      </div>
+
     </div>
   );
 };
 
 const mapStateToProps = state => {
-  return {
-    // userId: state.userId,
-    // properties: state.properties,
-    // error: state.error,
-    // isFetchingData: state.isFetchingData,
-    // updateProperties: state.updateProperties
-  };
+  return {};
 };
 
 export default connect(mapStateToProps, { getPlant })(DashboardPage);
