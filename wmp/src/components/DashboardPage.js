@@ -29,7 +29,10 @@ const DashboardPage = props => {
         <PlantCardList />
       </div>
 
-      <p> &#9400; 2020, Water My Plants</p>
+      <div className='footer' >
+        <p> &#9400; 2020, Water My Plants</p>
+      </div>
+
     </div>
   );
 };
