@@ -2,6 +2,7 @@
     display: flex;
     justify-content: space-between;
     box-shadow: 0px 5px 5px gray;
+    background-color: rgba(219, 225, 218, 0.9);
 }
 
 .NavBar h1 {

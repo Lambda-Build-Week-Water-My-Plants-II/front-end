@@ -1,3 +1,11 @@
+.dashboard {
+    background-image: url('../images/img1.jpg') ;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
 .cardStyle {
     width: 100%;
     margin-top: 1%;
@@ -17,10 +25,11 @@
 
 .plantCard {
     padding: 2% 0;
-    background: linear-gradient(180deg, rgba(7, 156, 7, 0.5) 10%, #DBE1DA 90%);
+    /* background: linear-gradient(180deg, rgba(7, 156, 7, 0.5) 10%, #DBE1DA 90%); */
     border-radius: 5px;
     box-shadow: 0px 5px 10px gray;
     width: 100%;
+    background-color: rgba(219, 225, 218, 0.9);
 }
 
 .cardButtons {
@@ -33,8 +42,8 @@
     border-radius: 3px;
     border: none;
     font-size: 1rem;
-    padding: 5% 2%;
-    width: 40%;
+    padding: 2% 1%;
+    width: 30%;
     margin: 1%;
 }
 

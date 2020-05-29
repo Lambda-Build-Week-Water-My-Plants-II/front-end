@@ -1,13 +1,14 @@
-/* .addPlant {
-    border: 1px red solid; */
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center;
-} */
+.addPlant {
+    background-image: url('../images/img2.jpg') ;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
 
 .return {
     /* border: 1px red solid; */
-    width: 43%;
+    width: 55%;
     padding-top: 4%;
 }
 
@@ -35,10 +36,33 @@
 .form {
     /* border: 1px red solid; */
     margin-top: 5%;
-    width: 40%;
+    width: 30%;
     padding: 10%;
     box-shadow: 0px 5px 10px gray;
     border-radius: 5px;
+    background-color: rgba(219, 225, 218, 0.9);
+}
+
+.form input {
+    /* border: 1px red solid; */
+    width: 100%;
+    padding: 1% 0 1% 1% ;
+    margin: 1% 0;
+    border-top: none;
+    border-right: none;
+    border-left: 1px gray solid;
+    border-bottom: 1px gray solid;
+    border-top-right-radius: 5px;
+}
+
+.form select {
+    width: 100%;
+    border-top: none;
+    border-right: none;
+    border-left: 1px gray solid;
+    border-bottom: 1px gray solid;
+    border-top-right-radius: 5px;
+    padding: .5% 0 .5% 1%;
 }
 
 
@@ -48,8 +72,8 @@
     border-radius: 3px;
     border: none;
     font-size: 1rem;
-    /* padding: 5% 2%; */
-    width: 55%;
+    padding: 1% 2%;
+    width: 45%;
     margin: 1%;
 }
 

@@ -73,7 +73,7 @@ const AddPlant = props => {
       <div className='anotherDiv'>
         <div className='form'>
           <form onSubmit={submitForm}>
-              <label htmlFor='nickname'> Name: </label>
+              <label htmlFor='nickname'></label>
               <input
                 id='nickname'
                 type='text'
@@ -84,18 +84,18 @@ const AddPlant = props => {
                 required
               />
               <br />
-              <label htmlFor='species'> Species: </label>
+              <label htmlFor='species'></label>
               <input
                 id='species'
                 type='text'
                 name='species'
                 onChange={handleChanges}
-                placeholder='species'
+                placeholder='Species'
                 value={plant.species}
                 required
               />
               <br />
-              <label htmlFor='h2oFrequency'> h2oFrequency:</label>
+              <label htmlFor='h2oFrequency'> h2o Frequency:</label>
               <select
                 id='h2oFrequency'
                 name='h2oFrequency'
