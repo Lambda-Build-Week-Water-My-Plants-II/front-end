@@ -5,19 +5,22 @@ import React from 'react';
 import {Link} from 'react-router-dom'
 import LoginForm from './LoginForm';
 // import RegistrationForm from './RegistrationForm';
+import './Login.css';
 
 function LoginPage() {
-    return (
-        <div>
-        <h1>WATER MY PLANTS</h1>
-        <div>
+  return (
+    <div className='loginPage'>
+      <h1>WATER MY PLANTS</h1>
+      <div className='formCard'>
+        <div className='loginForm'>
           <h2>Login</h2>
           <LoginForm/>
           <h3>Not a Member?</h3>
           <Link to= '/register' className= 'singUpButton'>Sign up!</Link>
         </div>
       </div>
-    )
+    </div>
+  )
 
 }
 

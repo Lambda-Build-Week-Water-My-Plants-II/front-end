@@ -8,6 +8,8 @@ import formSchema from "../validation/formSchema";
 import * as yup from "yup";
 import {Link} from 'react-router-dom'
 
+import './Registration.css';
+
 const initialFormError = {
   username: "",
   password: "",
@@ -71,6 +73,8 @@ const RegistrationForm = (props) => {
   return (
     <div className="regForm">
       <h3>Welcome!</h3>
+      <div className='formCard'>
+      <div className='loginForm'>
       <p>Please fill out all required fields</p>
       <form onSubmit={submitForm}>
         <input
@@ -105,7 +109,10 @@ const RegistrationForm = (props) => {
             <h3>Already a member?</h3>
             <Link to= '/' className= 'singUpButton'>Login!</Link>
         </div>
+
       </form>
+      </div>
+      </div>
     </div>
   );
 };
