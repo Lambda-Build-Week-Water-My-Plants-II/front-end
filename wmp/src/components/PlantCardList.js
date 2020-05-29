@@ -11,7 +11,7 @@ const PlantCardList = props => {
     console.log('plantcardlist', props)
 
   return (
-    <>
+    <div className='plantList'>
       {!props.error ? (
         !props.isFetchingData ? (
           <div>
@@ -22,15 +22,15 @@ const PlantCardList = props => {
               ))}
             </div>
 
-            : (<h3>No Plants Added Yet</h3>)}
+            : (<h3>No Plants &#127793;</h3>)}
           </div>
         ) : (
-          <h3>Fetching Plants ...</h3>
+          <h3>Fetching Plants ... &#127793;</h3>
         )
       ) : (
-        <h3>Welcome! Add A Plant To Begin</h3>
+        <h3>Welcome! Add A Plant To Begin &#127793;</h3>
       )}
-    </>
+    </div>
   );
 };
 
