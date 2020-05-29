@@ -8,8 +8,10 @@ import { connect } from 'react-redux';
 import {editPlant} from '../actions/PlantAction';
 import { useHistory } from "react-router-dom";
 
+import './AddPlantPage.css';
 
-const AddProperty = props => {
+
+const AddPlant = props => {
   console.log(props)
   let history = useHistory();
 
@@ -63,51 +65,56 @@ const AddProperty = props => {
 
   return (
     <div className='addPlant'>
+
       <div className='return'>
-        <Link to='/home'>return</Link>
+        <Link to='/home'><button> return</button></Link>
       </div>
-        <form onSubmit={submitForm}>
-            <label htmlFor='nickname'> Name: </label>
-            <input
-              id='nickname'
-              type='text'
-              name='nickname'
-              onChange={handleChanges}
-              placeholder='Name'
-              value={plant.nickname}
-              required
-            />
-            <br />
-            <label htmlFor='species'> Species: </label>
-            <input
-              id='species'
-              type='text'
-              name='species'
-              onChange={handleChanges}
-              placeholder='species'
-              value={plant.species}
-              required
-            />
-            <br />
-            <label htmlFor='h2oFrequency'> h2oFrequency:</label>
-            <select
-              id='h2oFrequency'
-              name='h2oFrequency'
-              onChange={handleSelectChanges}
-              value={plant.h2oFrequency}
-              required
-            >
-              <option value='low'>Low</option>
-              <option value='medium'>Medium</option>
-              <option value='high'>High</option>
-            </select>
 
-            <br />
-            <button type='submit'> Submit Plant</button>
-            {/* {console.log(props.isEditing, props.plantToEdit)} */}
+      <div className='anotherDiv'>
+        <div className='form'>
+          <form onSubmit={submitForm}>
+              <label htmlFor='nickname'> Name: </label>
+              <input
+                id='nickname'
+                type='text'
+                name='nickname'
+                onChange={handleChanges}
+                placeholder='Name'
+                value={plant.nickname}
+                required
+              />
+              <br />
+              <label htmlFor='species'> Species: </label>
+              <input
+                id='species'
+                type='text'
+                name='species'
+                onChange={handleChanges}
+                placeholder='species'
+                value={plant.species}
+                required
+              />
+              <br />
+              <label htmlFor='h2oFrequency'> h2oFrequency:</label>
+              <select
+                id='h2oFrequency'
+                name='h2oFrequency'
+                onChange={handleSelectChanges}
+                value={plant.h2oFrequency}
+                required
+              >
+                <option value='low'>Low</option>
+                <option value='medium'>Medium</option>
+                <option value='high'>High</option>
+              </select>
 
-        </form>
-        <p> &#9400; 2020, Water My Plants</p>
+              <button type='submit'> Submit Plant</button>
+          </form>
+        </div>
+        <div className='footer'>
+          <p> &#9400; 2020, Water My Plants</p>
+        </div>
+      </div>
     </div>
   );
 };
@@ -119,4 +126,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, {editPlant})(AddProperty);
+export default connect(mapStateToProps, {editPlant})(AddPlant);

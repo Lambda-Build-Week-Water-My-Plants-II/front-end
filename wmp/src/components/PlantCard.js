@@ -22,18 +22,6 @@ const PlantCard = props => {
 
     const {push} =  useHistory();
 
-    // const deletePlant = p => {
-    //     console.log('delete got pushed')
-    
-    //     axiosWithAuth()
-    //       .delete(`/api/plants/${p.id}`)
-    //       .then(res => {
-    //         console.log(res.data)
-              
-    //       })
-    //       .catch(err => console.log(err));
-    // };
-
     const editPlant = (plantObj => {
       props.startEdit(plantObj, () => push('/new-plant'))
     })
@@ -60,8 +48,6 @@ const PlantCard = props => {
 const mapStateToProps = state => {
     return {
       plant: state.plantReducer.plant,
-    //   isFetchingData: state.plantReducer.isFetchingData,
-    //   error: state.plantReducer.error
     };
 };
   

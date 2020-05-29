@@ -6,7 +6,6 @@ import React from 'react';
 import PlantCard from './PlantCard';
 import { connect } from 'react-redux';
 import { getPlant } from '../actions/PlantAction'
-// import { Tween, Timeline } from 'react-gsap';
 
 const PlantCardList = props => {
     console.log('plantcardlist', props)
@@ -30,10 +29,7 @@ const PlantCardList = props => {
         )
       ) : (
         <h4>Welcome! Add A Plant To Begin</h4>
-      )
-
-      }
-
+      )}
     </>
   );
 };

@@ -1,5 +1,4 @@
 .NavBar {
-    /* background-color: rgb(211, 211, 211); */
     display: flex;
     justify-content: space-between;
     box-shadow: 0px 5px 5px gray;
@@ -13,8 +12,6 @@
 .linky, .logout {
     display: flex;
     align-items: center;
-    /* padding: 2% 4%; */
-    /* border: 1px red solid; */
     width: 15%;
 }
 
@@ -27,9 +24,7 @@
     color: white;
     border-radius: 3px;
     border: none;
-    /* padding: 2% 4%; */
     font-size: 1.2rem;
-    /* border: 1px red solid; */
     padding: 5% 2%;
     width: 100%;
 
