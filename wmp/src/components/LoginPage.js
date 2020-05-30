@@ -18,6 +18,9 @@ function LoginPage() {
           <h3>Not a Member?</h3>
           <Link to= '/register' className= 'singUpButton'>Sign up!</Link>
         </div>
+      <div className='footer' >
+        <p> &#9400; 2020, Water My Plants</p>
+      </div>
       </div>
     </div>
   )

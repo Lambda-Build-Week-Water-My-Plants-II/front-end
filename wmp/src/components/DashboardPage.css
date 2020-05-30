@@ -1,19 +1,28 @@
 .dashboard {
-    background-image: url('../images/img1.jpg') ;
+    background-image: url('../images/img1.jpg');
+    background-color: rgba(255, 255, 255, 0.3);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-blend-mode: overlay;
     height: 100vh;
 }
+
+/* .dashboard:before {
+    background-color:  rgba(255, 255, 255, 0.3);
+} */
 
 .cardStyle {
     width: 100%;
     margin-top: 1%;
 }
 
-.plantList h3 {
+.plantList h2 {
     color: rgb(0, 0, 0);
     margin: 10%;
+    /* background-color: rgba(219, 225, 218, 0.9); */
+    /* width: 30%; */
+    border-radius: 8px;
 }
 
 .mainCard {
@@ -53,7 +62,7 @@
 }
 
 .cardButtons button:hover {
-    background-color: rgb(0, 0, 0);
+    background:rgba(58, 105, 50, 1);
     transition: .6s;
 }
 

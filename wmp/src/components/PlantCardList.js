@@ -22,13 +22,13 @@ const PlantCardList = props => {
               ))}
             </div>
 
-            : (<h3>No Plants &#127793;</h3>)}
+            : (<h2>No Plants &#127793;</h2>)}
           </div>
         ) : (
-          <h3>Fetching Plants ... &#127793;</h3>
+          <h2>Fetching Plants ... &#127793;</h2>
         )
       ) : (
-        <h3>Welcome! Add A Plant To Begin &#127793;</h3>
+        <h2>Welcome! Add A Plant To Begin &#127793;</h2>
       )}
     </div>
   );
