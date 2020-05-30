@@ -72,9 +72,10 @@ const RegistrationForm = (props) => {
 
   return (
     <div className="regForm">
-      <h3>Welcome!</h3>
+      <h1>WATER MY PLANTS</h1>
       <div className='formCard'>
       <div className='loginForm'>
+      <h2>Welcome!</h2>
       <p>Please fill out all required fields</p>
       <form onSubmit={submitForm}>
         <input
@@ -112,6 +113,9 @@ const RegistrationForm = (props) => {
 
       </form>
       </div>
+      </div>
+      <div className='footer' >
+        <p> &#9400; 2020, Water My Plants</p>
       </div>
     </div>
   );

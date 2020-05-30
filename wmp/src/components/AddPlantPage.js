@@ -103,6 +103,7 @@ const AddPlant = props => {
                 value={plant.h2oFrequency}
                 required
               >
+                <option>Select Option</option>
                 <option value='low'>Low</option>
                 <option value='medium'>Medium</option>
                 <option value='high'>High</option>
