@@ -7,7 +7,8 @@ import {
   SET_ERROR,
   DELETE_PLANT,
   EDITING_PLANT,
-  EDIT_PLANT
+  EDIT_PLANT,
+  // FETCH_USER
 } from '../actions/PlantAction';
   
 const initialState = {
@@ -15,7 +16,8 @@ const initialState = {
   isFetchingData: false,
   error: '',
   isEditing: false,
-  plantToEdit: {}
+  plantToEdit: {},
+  userId: '',
 };
 
 const plantReducer = (state = initialState, action) => {
@@ -58,6 +60,11 @@ const plantReducer = (state = initialState, action) => {
           }
         })]
       }
+    // case FETCH_USER:
+    //   return {
+    //     ...state,
+    //     userName: action.payload
+    //   }
     case SET_USER:
       return {
         ...state,

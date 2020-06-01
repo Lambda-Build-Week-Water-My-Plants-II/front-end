@@ -7,6 +7,7 @@ export const SET_ERROR = 'SET_ERROR';
 export const DELETE_PLANT = 'DELETE_PLANT';
 export const EDITING_PLANT = 'EDITING_PLANT';
 export const EDIT_PLANT = 'EDIT_PLANT';
+// export const FETCH_USER = 'FETCH_USER';
 
 export const getPlant = userId => dispatch => {
   dispatch({ type: FETCH_PLANT_START });
@@ -48,6 +49,17 @@ export const editPlant = (plantId, plant) => dispatch => {
   })
   .catch(err => console.log(err));
 }
+
+// export const getUser = userName => dispatch => {
+//   // dispatch({ type: FETCH_USER });
+//   axiosWithAuth()
+//     .get(`/api/user`)
+//     .then(res => {
+//       console.log('userName', res)
+//       dispatch({ type: FETCH_USER, payload: res.data.username });
+//     })
+//     .catch(error => console.log('getUser', error));
+// }
 
 export const setUserId = userId => dispatch => {
   dispatch({ type: SET_USER, payload: userId });
