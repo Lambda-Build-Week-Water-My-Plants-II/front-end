@@ -9,6 +9,11 @@
     margin-left: 1%;
 }
 
+.NavBar h3 {
+    /* background-color: white; */
+    display: flex;
+    align-items: center;
+}
 
 .linky, .logout {
     display: flex;

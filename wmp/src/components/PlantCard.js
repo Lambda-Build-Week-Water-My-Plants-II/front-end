@@ -18,7 +18,7 @@ import { getPlant, deletePlant, startEdit } from '../actions/PlantAction'
 
 
 const PlantCard = props => {
-    console.log('plantcardy', props)
+    // console.log('plantcardy', props)
 
     const {push} =  useHistory();
 
