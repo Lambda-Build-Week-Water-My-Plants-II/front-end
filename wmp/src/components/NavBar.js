@@ -14,9 +14,7 @@ import './navbar.css';
 const Navbar = () => {
   const history = useHistory();
   const [name, setName] = useState('')
-  console.log('username state', name)
-
-
+  // console.log('username state', name)
 
   useEffect(() => {
     axiosWithAuth()
@@ -43,7 +41,8 @@ const Navbar = () => {
       <div className="NavBar">
         <h1>Water My Plants</h1>   
 
-        <h3>Welcome {name} &#129373;</h3>
+        <h3>Welcome {name} <div className="kiwi"> &#129373;</div></h3>
+        
   
         <div className='linky'>
           <button onClick={newPlant}>New Plant</button>
