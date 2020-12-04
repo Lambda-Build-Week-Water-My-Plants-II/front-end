@@ -14,7 +14,6 @@ export const getPlant = userId => dispatch => {
   axiosWithAuth()
     .get(`/api/plants/`)
     .then(res => {
-      console.log('get', res)
       dispatch({ type: FETCH_PLANT_SUCCESS, payload: res.data });
     })
     .catch(error =>

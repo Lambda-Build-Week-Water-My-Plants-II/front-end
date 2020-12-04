@@ -20,7 +20,6 @@ const Navbar = () => {
     axiosWithAuth()
       .get('/api/user')
       .then(res => {
-        console.log('getuser', res.data.username)
         setName(res.data.username)
       })
       .catch(err => console.log(err))
@@ -41,7 +40,7 @@ const Navbar = () => {
       <div className="NavBar">
         <h1>Water My Plants</h1>   
 
-        <h3>Welcome {name} <div className="kiwi"> &#129373;</div></h3>
+        <h3>Welcome {name} <div className="kiwi"><span role='img' aria-label='kiwi'> &#129373;</span> </div></h3>
         
   
         <div className='linky'>
