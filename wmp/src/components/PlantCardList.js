@@ -8,7 +8,6 @@ import { connect } from 'react-redux';
 import { getPlant } from '../actions/PlantAction'
 
 const PlantCardList = props => {
-    console.log('plantcardlist', props)
 
   return (
     <div className='plantList'>
@@ -22,13 +21,13 @@ const PlantCardList = props => {
               ))}
             </div>
 
-            : (<h2>No Plants &#127793;</h2>)}
+            : (<h2>No Plants <span role='img' aria-label='checked'>&#127793;</span></h2>)}
           </div>
         ) : (
-          <h2>Fetching Plants ... &#127793;</h2>
+          <h2>Fetching Plants ... <span role='img' aria-label='checked'>&#127793;</span></h2>
         )
       ) : (
-        <h2>Welcome! Add A Plant To Begin &#127793;</h2>
+        <h2>Welcome! Add A Plant To Begin <span role='img' aria-label='checked'>&#127793;</span></h2>
       )}
     </div>
   );

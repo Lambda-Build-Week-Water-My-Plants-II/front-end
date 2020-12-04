@@ -58,7 +58,6 @@ const RegistrationForm = (props) => {
         axiosWithAuth()
             .post('/api/auth/register', userCredentials)
             .then(res => {
-                console.log(res)
                 history.push("/");
             })
             .catch( err => console.log(err) );

@@ -35,18 +35,18 @@ const AddPlant = props => {
   const handleSelectChanges = e => {
     const valueSelected = e.target.value;
     setPlant({ ...plant, [e.target.name]: valueSelected });
-    console.log('fluffy', e.target.name, valueSelected, plant);
+    
   };
 
   const handleChanges = e => {
       setPlant({ ...plant, [e.target.name]: e.target.value });
-      console.log(plant);
+      
     };
 
 
   const submitForm = e => {
     e.preventDefault();
-    console.log(plant);
+    
 
     if(props.isEditing === true){
       props.editPlant(props.plantToEdit.id, plant)
@@ -55,7 +55,6 @@ const AddPlant = props => {
       axiosWithAuth()
       .post(`/api/plants/`, plant)
       .then(res => {
-        console.log(res)
         history.push("/home");
       })
       .catch(err => console.log(err));

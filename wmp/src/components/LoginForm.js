@@ -32,7 +32,6 @@ const LoginForm = (props) => {
     axiosWithAuth()
       .post('/api/auth/login', userCredentials)
       .then(res => {
-        console.log(res);
         props.setUserId(res.data.id);
         window.localStorage.setItem("token", res.data.token);
         window.localStorage.setItem("userId", res.data.id);
